@@ -122,21 +122,6 @@ client.on("guildMemberAdd", member => {
 	
 });
 
-client.on("guildMemberAdd", async member => {
-    let sayac = await db.fetch(`sayac_${member.guild.id}`);
-    let skanal9 = await db.fetch(`sayacK_${member.guild.id}`);
-  if (!skanal9) return;
-  const skanal31 = member.guild.channels.find('name', skanal9)
-    skanal31.send(`**${member.user.tag}** Katıldı ${sayac} olmamıza son ${sayac - member.guild.members.size} üye kaldı!`)
-});
-
-client.on("guildMemberRemove", async member => {
-    let sayac = await db.fetch(`sayac_${member.guild.id}`);
-  let skanal9 = await db.fetch(`sayacK_${member.guild.id}`);
-  if (!skanal9) return;
-  const skanal31 = member.guild.channels.find('name', skanal9)
-    skanal31.send(`**${member.user.tag}** Ayrıldı ${sayac} olmamıza son ${sayac - member.guild.members.size} üye kaldı!`)
-});
 
 ////////////////////////
 
